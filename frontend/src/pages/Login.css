@@ -1,0 +1,152 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 40px 20px;
+}
+
+.ascii-art {
+  margin-bottom: 30px;
+  animation: slideIn 0.8s ease-out;
+}
+
+.ascii-art pre {
+  color: #33ff33;
+  text-shadow: 0 0 10px #33ff33;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.login-prompt p {
+  margin: 10px 0;
+}
+
+.terminal-hint {
+  color: #888;
+  font-size: 13px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: rgba(0, 255, 0, 0.05);
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid rgba(51, 255, 51, 0.2);
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #33ff33;
+  box-shadow: 0 0 10px rgba(51, 255, 51, 0.3);
+  background: rgba(0, 255, 0, 0.08);
+}
+
+.prompt {
+  color: #33ff33;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #33ff33;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+.terminal-input::placeholder {
+  color: rgba(51, 255, 51, 0.4);
+}
+
+.error-message {
+  color: #ff5f57;
+  margin: 20px 0;
+  padding: 10px 15px;
+  background: rgba(255, 95, 87, 0.1);
+  border: 1px solid rgba(255, 95, 87, 0.3);
+  border-radius: 5px;
+  animation: shake 0.5s ease-out;
+}
+
+.error-icon {
+  margin-right: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #33ff33 0%, #00ff88 100%);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  box-shadow: 0 5px 15px rgba(51, 255, 51, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(51, 255, 51, 0.4);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.terminal-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 12px;
+  animation: fadeIn 1.5s ease-out 0.8s both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@media (max-width: 768px) {
+  .ascii-art pre {
+    font-size: 8px;
+  }
+  
+  .login-form {
+    max-width: 100%;
+  }
+  
+  .prompt {
+    font-size: 12px;
+  }
+}
